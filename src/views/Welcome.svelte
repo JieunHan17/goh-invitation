@@ -85,7 +85,7 @@
   }
 
   #title {
-    margin-top: 32vh;
+    margin-top: calc(30lvh);
     background: top no-repeat;
     background-size: contain;
     text-align: center;

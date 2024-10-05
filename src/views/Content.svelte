@@ -1,7 +1,9 @@
 <script>
   import { fade } from "svelte/transition";
-  import { contentPageVisible } from "../stores/pageIndexStore";
-  import { giftPageVisible } from "../stores/pageIndexStore";
+  import {
+    contentPageVisible,
+    giftPageVisible,
+  } from "../stores/pageIndexStore";
   import DESC from "../../public/text/description";
   import typewriter from "../utils/typewriter";
 
@@ -91,7 +93,7 @@
   #note-img-wrapper {
     position: relative;
     text-align: center;
-    margin-top: 32vh;
+    margin-top: calc(30lvh);
   }
 
   #note-img {
@@ -136,7 +138,7 @@
   }
 
   #character-img {
-    width: 50%;
+    width: calc(25lvh);
     filter: drop-shadow(1px 1px 21px rgba(255, 255, 255, 0.75));
   }
 

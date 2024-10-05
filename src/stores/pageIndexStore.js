@@ -36,6 +36,19 @@ function isVideoPage() {
     };
 }
 
+function isConclusionPage() {
+    const { subscribe, set, update } = writable(false);
+
+    return {
+        subscribe,
+        update: (newValue) => update((value) => {
+            value = newValue;
+            return value;
+        })
+    };
+}
+
 export const contentPageVisible = isContentPage();
 export const giftPageVisible = isGiftPage();
 export const videoPageVisible = isVideoPage();
+export const conclusionPageVisible = isConclusionPage();

@@ -4,10 +4,12 @@
   import Gift from "./views/Gift.svelte";
   import Video from "./views/Video.svelte";
   import {
+    conclusionPageVisible,
     contentPageVisible,
     giftPageVisible,
     videoPageVisible,
   } from "./stores/pageIndexStore";
+  import Conclusion from "./views/Conclusion.svelte";
 </script>
 
 <main>
@@ -17,6 +19,8 @@
     <Gift />
   {:else if $videoPageVisible}
     <Video />
+  {:else if $conclusionPageVisible}
+    <Conclusion />
   {:else}
     <Welcome />
   {/if}

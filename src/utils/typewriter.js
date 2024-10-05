@@ -10,7 +10,7 @@ export default function typewriter(node, { speed = 1 }) {
     }
 
     const text = node.textContent;
-    const duration = text.length / (speed * 0.01);
+    const duration = text.length / (speed * 0.02);
 
     return {
         duration,
