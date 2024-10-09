@@ -68,15 +68,16 @@
   }
 
   #gift-img {
-    height: calc(35svh);
+    height: 20%;
   }
 
   #gift-open-img {
-    width: 90%;
+    width: 80%;
   }
 
   @media (min-width: 430px) and (max-height: 932px) {
-    #gift {
+    #gift,
+    #gift-open {
       margin-top: 298px;
     }
   }

@@ -138,7 +138,7 @@
   }
 
   #character-img {
-    width: calc(25svh);
+    width: 40%;
     filter: drop-shadow(1px 1px 21px rgba(255, 255, 255, 0.75));
   }
 

@@ -55,19 +55,17 @@
 
   #video-frame {
     width: 100%;
-    height: calc(50svh);
   }
 
   #video {
     position: absolute;
     width: 80%;
-    height: calc(30svh);
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
   }
 
   #next-text {
-    margin-top: 5px;
     font-size: 5vw;
     text-shadow:
       -1px 0px white,
@@ -79,7 +77,7 @@
   }
 
   @media (min-width: 430px) and (max-height: 932px) {
-    #video {
+    #video-wrapper {
       margin-top: 311px;
     }
   }

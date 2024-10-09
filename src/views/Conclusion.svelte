@@ -18,8 +18,8 @@
   }
 
   #conclusion-text {
-    margin-top: calc(30svh);
-    font-size: 5vw;
+    margin-top: calc(35svh);
+    font-size: clamp(1rem, 5vw, 2rem);
     text-shadow:
       -1px 0px white,
       0px 1px white,
@@ -35,6 +35,12 @@
   }
 
   #character-img {
-    width: calc(35svh);
+    width: 50%;
+  }
+
+  @media (min-width: 430px) and (max-height: 932px) {
+    #conclusion-text {
+      margin-top: 311px;
+    }
   }
 </style>
