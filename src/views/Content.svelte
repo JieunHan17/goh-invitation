@@ -93,7 +93,7 @@
   #note-img-wrapper {
     position: relative;
     text-align: center;
-    margin-top: calc(30lvh);
+    margin-top: calc(30svh);
   }
 
   #note-img {
@@ -138,7 +138,7 @@
   }
 
   #character-img {
-    width: calc(25lvh);
+    width: calc(25svh);
     filter: drop-shadow(1px 1px 21px rgba(255, 255, 255, 0.75));
   }
 

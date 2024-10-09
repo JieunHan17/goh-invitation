@@ -63,12 +63,12 @@
   #gift-open {
     position: relative;
     text-align: center;
-    margin-top: calc(30lvh);
+    margin-top: calc(30svh);
     cursor: pointer;
   }
 
   #gift-img {
-    height: calc(35lvh);
+    height: calc(35svh);
   }
 
   #gift-open-img {

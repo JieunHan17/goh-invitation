@@ -85,7 +85,7 @@
   }
 
   #title {
-    margin-top: calc(30lvh);
+    margin-top: calc(30svh);
     background: top no-repeat;
     background-size: contain;
     text-align: center;
