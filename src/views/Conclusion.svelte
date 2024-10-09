@@ -18,7 +18,7 @@
   }
 
   #conclusion-text {
-    margin-top: calc(30lvh);
+    margin-top: calc(30svh);
     font-size: 5vw;
     text-shadow:
       -1px 0px white,
@@ -35,6 +35,6 @@
   }
 
   #character-img {
-    width: calc(35lvh);
+    width: calc(35svh);
   }
 </style>

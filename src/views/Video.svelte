@@ -50,18 +50,18 @@
   #video-wrapper {
     position: relative;
     text-align: center;
-    margin-top: calc(30lvh);
+    margin-top: calc(30svh);
   }
 
   #video-frame {
     width: 100%;
-    height: calc(50lvh);
+    height: calc(50svh);
   }
 
   #video {
     position: absolute;
     width: 80%;
-    height: calc(30lvh);
+    height: calc(30svh);
     left: 50%;
     transform: translateX(-50%);
   }
