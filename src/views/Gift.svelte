@@ -64,15 +64,36 @@
     position: relative;
     text-align: center;
     margin-top: calc(30svh);
+    animation: shake 1s linear infinite;
     cursor: pointer;
   }
 
   #gift-img {
     height: 20%;
+    filter: drop-shadow(1px 1px 21px rgba(255, 255, 255, 0.75));
   }
 
   #gift-open-img {
     width: 80%;
+    filter: drop-shadow(1px 1px 21px rgba(255, 255, 255, 0.75));
+  }
+
+  @keyframes shake {
+    0% {
+      transform: rotate(0);
+    }
+    25% {
+      transform: rotate(-2deg);
+    }
+    50% {
+      transform: rotate(2deg);
+    }
+    75% {
+      transform: rotate(-1deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
   }
 
   @media (min-width: 430px) and (max-height: 932px) {

@@ -151,7 +151,7 @@
     align-items: flex-end;
     box-sizing: border-box;
     padding-right: 10px;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
     text-decoration-line: none;
   }
 

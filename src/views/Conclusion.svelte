@@ -36,6 +36,7 @@
 
   #character-img {
     width: 50%;
+    filter: drop-shadow(1px 1px 21px rgba(255, 255, 255, 0.75));
   }
 
   @media (min-width: 430px) and (max-height: 932px) {
