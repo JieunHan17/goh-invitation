@@ -78,7 +78,7 @@
   </div>
   <!-- https://litt.ly/goh_youth -->
   <a id="instagram" href="https://www.instagram.com/goh_youth/" target="_blank">
-    <span id="instagram-id">@goh_youth</span>
+    <!-- <span id="instagram-id">@goh_youth</span> -->
     <img id="instagram-img" src={insta} alt="instagram" />
   </a>
 </div>
@@ -163,7 +163,7 @@
   }
 
   #instagram-img {
-    width: 8%;
+    width: 10%;
   }
 
   @media (min-width: 430px) {
