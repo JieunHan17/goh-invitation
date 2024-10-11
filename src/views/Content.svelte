@@ -96,7 +96,6 @@
     position: relative;
     text-align: center;
     margin-top: calc(30svh);
-    flex-grow: 1;
   }
 
   #note-img {
@@ -138,7 +137,6 @@
 
   #character {
     width: 100%;
-    flex-grow: 1;
   }
 
   #character-img {
@@ -151,7 +149,6 @@
     width: 100%;
     height: 100%;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: flex-end;
     box-sizing: border-box;
     padding-right: 10px;
