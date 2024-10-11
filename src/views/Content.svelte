@@ -89,7 +89,6 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
   }
 
   #note-img-wrapper {
@@ -149,6 +148,7 @@
     width: 100%;
     height: 100%;
     flex-direction: column;
+    justify-content: flex-end;
     align-items: flex-end;
     box-sizing: border-box;
     padding-right: 10px;
@@ -164,6 +164,7 @@
 
   #instagram-img {
     width: 10%;
+    margin-bottom: 10%;
   }
 
   @media (min-width: 430px) {
