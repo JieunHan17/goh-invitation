@@ -163,8 +163,7 @@
   }
 
   #instagram-img {
-    width: 10%;
-    margin-bottom: 10%;
+    width: 8%;
   }
 
   @media (min-width: 430px) {
