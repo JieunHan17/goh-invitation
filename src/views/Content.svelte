@@ -76,6 +76,7 @@
   <div id="character">
     <img id="character-img" src={character} alt="character" />
   </div>
+  <!-- https://litt.ly/goh_youth -->
   <a id="instagram" href="https://www.instagram.com/goh_youth/" target="_blank">
     <span id="instagram-id">@goh_youth</span>
     <img id="instagram-img" src={insta} alt="instagram" />
@@ -88,6 +89,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
 
   #note-img-wrapper {
