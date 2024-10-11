@@ -31,8 +31,8 @@
   }
 
   onMount(() => {
-    screenWidth = window.innerHeight;
-    screenHeight = window.innerWidth;
+    screenWidth = window.innerWidth;
+    screenHeight = window.innerHeight;
     textVisible = true;
   });
 </script>

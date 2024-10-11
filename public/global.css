@@ -13,6 +13,7 @@ body {
   justify-content: center;
   box-sizing: border-box;
   font-family: "Mingyung";
+  -webkit-tap-highlight-color: transparent;
 }
 
 @font-face {

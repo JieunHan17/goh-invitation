@@ -94,6 +94,7 @@
     position: relative;
     text-align: center;
     margin-top: calc(30svh);
+    flex-grow: 1;
   }
 
   #note-img {
@@ -135,6 +136,7 @@
 
   #character {
     width: 100%;
+    flex-grow: 1;
   }
 
   #character-img {

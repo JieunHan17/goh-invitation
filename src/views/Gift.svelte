@@ -64,8 +64,11 @@
     position: relative;
     text-align: center;
     margin-top: calc(30svh);
-    animation: shake 1s linear infinite;
     cursor: pointer;
+  }
+
+  #gift {
+    animation: shake 1s linear infinite;
   }
 
   #gift-img {
