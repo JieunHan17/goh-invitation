@@ -1,4 +1,4 @@
-export default function typewriter(node, { speed = 1 }) {
+export default function typewriter(node, { speed = 1, completed = false }) {
     const valid =
         node.childNodes.length === 1 &&
         node.childNodes[0].nodeType === Node.TEXT_NODE;
@@ -10,13 +10,17 @@ export default function typewriter(node, { speed = 1 }) {
     }
 
     const text = node.textContent;
-    const duration = text.length / (speed * 0.02);
+    const duration = completed ? 0 : text.length / (speed * 0.02);
 
     return {
         duration,
         tick: (t) => {
-            const i = Math.trunc(text.length * t);
-            node.textContent = text.slice(0, i);
+            if (completed) {
+                node.textContent = text;
+            } else {
+                const i = Math.trunc(text.length * t);
+                node.textContent = text.slice(0, i);
+            }
         },
     };
 }

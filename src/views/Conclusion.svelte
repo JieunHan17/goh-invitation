@@ -14,7 +14,7 @@
 
 <div id="wrapper" transition:fade={{ duration: 300 }}>
   <div id="conclusion-wrapper">
-    <div id="conclusion-text">{DESC.DESC7}</div>
+    <div id="conclusion-text" in:fade={{ duration: 1000 }}>{DESC.DESC7}</div>
     <div id="character">
       <img id="character-img" src={character} alt="character" />
     </div>

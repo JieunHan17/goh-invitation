@@ -11,10 +11,10 @@
   const DEFAULT_WIDTH_DESKTOP = 430;
 
   const note = "assets/note.png";
-  const brush = "assets/brush.png";
   const character = "assets/character.png";
   const insta =
     "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg";
+  const logo = "assets/logo.png";
   const descriptions = [
     DESC.DESC2,
     DESC.DESC3,
@@ -23,9 +23,12 @@
     DESC.DESC6,
   ];
 
+  let completed = false;
   let isTypingOver = false;
+  let isVisible = false;
   $: descIndex = 0;
   $: desc = descriptions[descIndex];
+  $: keyArray = [completed, desc];
 
   const image = new Image();
   image.src = note;
@@ -44,31 +47,57 @@
   function handleClickNext() {
     console.log("handleClickNext");
     if (descIndex < 4) {
-      descIndex++;
+      descIndex += 1;
     }
+    completed = false;
     isTypingOver = false;
+    isVisible = descIndex == 3 ? true : false;
+    console.log("isVisible: ", isVisible);
+  }
+
+  function handleClickScreen() {
+    completed = true;
   }
 </script>
 
-<div id="wrapper" transition:fade={{ duration: 300 }}>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div
+  id="wrapper"
+  transition:fade={{ duration: 300 }}
+  on:click|preventDefault|stopPropagation={() => {
+    handleClickScreen();
+  }}
+>
   <div id="note-img-wrapper">
     <img id="note-img" src={note} alt="note" />
     <div id="note-text-wrapper">
-      {#key desc}
-        <span id="note-text" on:introend={handleIntroEnd} in:typewriter
-          >{desc}</span
+      {#key keyArray}
+        <span
+          id="note-text"
+          on:introend={handleIntroEnd}
+          in:typewriter={{ completed: completed }}>{desc}</span
         >
       {/key}
       {#if isTypingOver}
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <div
-          id="next-text"
-          tabindex="0"
-          role="button"
-          on:click|preventDefault|stopPropagation={handleClickNext}
-          style="background: url({brush});"
-        >
-          {DESC.NEXT}
+        <div id="btn-text-wrapper">
+          <a
+            id="instagram"
+            href="https://www.instagram.com/goh_youth/"
+            target="_blank"
+            style="visibility: {isVisible ? 'visible' : 'hidden'}"
+            in:fade={{ duration: 1000 }}
+          >
+            <img id="instagram-img" src={insta} alt="instagram" />
+          </a>
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <div
+            id="next-text"
+            tabindex="0"
+            role="button"
+            on:click|preventDefault|stopPropagation={handleClickNext}
+          >
+            {DESC.NEXT}
+          </div>
         </div>
       {/if}
     </div>
@@ -76,10 +105,9 @@
   <div id="character">
     <img id="character-img" src={character} alt="character" />
   </div>
-  <!-- https://litt.ly/goh_youth -->
-  <a id="instagram" href="https://www.instagram.com/goh_youth/" target="_blank">
+  <a id="logo" href="http://www.joodasan.org" target="_blank">
     <!-- <span id="instagram-id">@goh_youth</span> -->
-    <img id="instagram-img" src={insta} alt="instagram" />
+    <img id="logo-img" src={logo} alt="logo" />
   </a>
 </div>
 
@@ -116,21 +144,39 @@
   #note-text {
     color: grey;
     font-weight: normal;
-    font-size: 5vw;
+    font-size: 6vw;
     white-space: pre-wrap;
     word-wrap: unset;
     text-align: left;
   }
 
-  #next-text {
+  #btn-text-wrapper {
     align-self: flex-end;
-    font-size: 5vw;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #instagram {
+    flex: 2;
+    width: 100%;
+    text-align: start;
+  }
+
+  #instagram-img {
+    width: 12%;
+    cursor: pointer;
+  }
+
+  #next-text {
+    font-size: 6vw;
     text-shadow:
       -1px 0px white,
       0px 1px white,
       1px 0px white,
       0px -1px white;
-    text-align: right;
+    text-align: end;
     cursor: pointer;
   }
 
@@ -143,7 +189,7 @@
     filter: drop-shadow(1px 1px 21px rgba(255, 255, 255, 0.75));
   }
 
-  #instagram {
+  #logo {
     display: flex;
     width: 100%;
     height: 100%;
@@ -156,13 +202,7 @@
     text-decoration-line: none;
   }
 
-  #instagram-id {
-    margin-bottom: 2px;
-    font-size: 20%;
-    color: #b7439a;
-  }
-
-  #instagram-img {
+  #logo-img {
     width: 10%;
   }
 
