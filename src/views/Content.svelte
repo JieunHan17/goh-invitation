@@ -58,6 +58,11 @@
   function handleClickScreen() {
     completed = true;
   }
+
+  function move(url) {
+    console.log("move");
+    window.open(url, "_blank");
+  }
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -82,6 +87,9 @@
         <div id="btn-text-wrapper">
           <a
             id="instagram"
+            on:click|preventDefault|stopPropagation={() => {
+              move("https://www.instagram.com/goh_youth/");
+            }}
             href="https://www.instagram.com/goh_youth/"
             target="_blank"
             style="visibility: {isVisible ? 'visible' : 'hidden'}"
@@ -105,7 +113,15 @@
   <div id="character">
     <img id="character-img" src={character} alt="character" />
   </div>
-  <a id="logo" href="http://www.joodasan.org" target="_blank">
+  <a
+    id="logo"
+    on:click|preventDefault|stopPropagation={() => {
+      move("http://www.joodasan.org");
+    }}
+    href="http://www.joodasan.org"
+    target="_blank"
+    rel="external"
+  >
     <!-- <span id="instagram-id">@goh_youth</span> -->
     <img id="logo-img" src={logo} alt="logo" />
   </a>
@@ -144,7 +160,7 @@
   #note-text {
     color: grey;
     font-weight: normal;
-    font-size: 6vw;
+    font-size: 5.5vw;
     white-space: pre-wrap;
     word-wrap: unset;
     text-align: left;
@@ -170,7 +186,7 @@
   }
 
   #next-text {
-    font-size: 6vw;
+    font-size: 5.5vw;
     text-shadow:
       -1px 0px white,
       0px 1px white,
@@ -200,6 +216,8 @@
     padding-right: 10px;
     margin-bottom: 10px;
     text-decoration-line: none;
+    z-index: 1; /* Ensure it's on top */
+    pointer-events: auto;
   }
 
   #logo-img {
