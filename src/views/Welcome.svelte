@@ -1,12 +1,9 @@
 <script>
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
-  import { contentPageVisible } from "../stores/pageIndexStore";
   import DESC from "../../public/text/description";
   import typewriter from "../utils/typewriter";
-
-  const DEFAULT_HEIGHT_DESKTOP = 932;
-  const DEFAULT_WIDTH_DESKTOP = 430;
+  import { replace } from "svelte-spa-router";
 
   const title = "assets/title.png";
   const envelopClosed = "assets/envelop_closed.png";
@@ -25,7 +22,7 @@
     setTimeout(() => {
       whiteBackgroundVisible = true;
       setTimeout(() => {
-        contentPageVisible.update(true);
+        replace("/message");
       }, 800);
     }, 1000);
   }
@@ -62,8 +59,8 @@
       </div>
     {/if}
     {#if textVisible}
-      <div id="desc-wrapper" in:typewriter>
-        <span id="desc">{DESC.DESC1}</span>
+      <div id="desc-wrapper" class="hi-melody-regular">
+        <span id="desc" in:typewriter>{DESC.DESC1}</span>
       </div>
     {/if}
   </div>
@@ -94,7 +91,7 @@
   }
 
   #title-img {
-    width: 80%;
+    height: calc(10svh);
   }
 
   #envelop {
@@ -107,7 +104,7 @@
   }
 
   #envelop-img {
-    width: 60%;
+    height: calc(30svh);
     filter: drop-shadow(1px 1px 21px rgba(255, 255, 255, 0.75));
   }
 
@@ -135,28 +132,21 @@
 
   #envelop-open {
     width: 100%;
-    margin-top: -20%;
+    margin-top: calc(-15svh);
     text-align: center;
   }
 
   #envelop-open-img {
-    width: 60%;
+    height: calc(40svh);
   }
 
   #desc-wrapper {
     color: grey;
-    font-weight: normal;
-    font-size: 20px;
+    font-size: calc(2.5svh);
     text-align: center;
   }
 
   #desc {
     background-color: #ffffff80;
-  }
-
-  @media (min-width: 430px) and (max-height: 932px) {
-    #title {
-      margin-top: 311px;
-    }
   }
 </style>
