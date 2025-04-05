@@ -14,7 +14,9 @@
 
 <div id="wrapper" transition:fade={{ duration: 300 }}>
   <div id="conclusion-wrapper">
-    <div id="conclusion-text" in:fade={{ duration: 1000 }}>{DESC.DESC7}</div>
+    <div id="conclusion-text-wrapper" in:fade={{ duration: 1000 }}>
+      <span id="conclusion-text">{DESC.DESC7}</span>
+    </div>
     <div id="character">
       <img id="character-img" src={character} alt="character" />
     </div>
@@ -51,13 +53,17 @@
     margin-top: calc(35svh);
   }
 
-  #conclusion-text {
+  #conclusion-text-wrapper {
     font-size: clamp(1rem, 5vw, 2rem);
     color: grey;
     white-space: pre-wrap;
     word-wrap: unset;
     text-align: center;
     cursor: pointer;
+  }
+
+  #conclusion-text {
+    background-color: #ffffff80;
   }
 
   #character {

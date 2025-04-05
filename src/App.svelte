@@ -31,7 +31,7 @@
   main {
     width: 100%;
     height: 100%;
-    background: url("/assets/background.png") center no-repeat;
+    background: url("/assets/flowers_background.png") center no-repeat;
     background-size: cover;
   }
 

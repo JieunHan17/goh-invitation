@@ -62,7 +62,9 @@
       </div>
     {/if}
     {#if textVisible}
-      <div id="desc" in:typewriter>{DESC.DESC1}</div>
+      <div id="desc-wrapper" in:typewriter>
+        <span id="desc">{DESC.DESC1}</span>
+      </div>
     {/if}
   </div>
 {/if}
@@ -141,11 +143,15 @@
     width: 60%;
   }
 
-  #desc {
+  #desc-wrapper {
     color: grey;
     font-weight: normal;
     font-size: 20px;
     text-align: center;
+  }
+
+  #desc {
+    background-color: #ffffff80;
   }
 
   @media (min-width: 430px) and (max-height: 932px) {
