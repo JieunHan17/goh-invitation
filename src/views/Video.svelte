@@ -72,6 +72,12 @@
     cursor: pointer;
   }
 
+  @media (min-width: 430px) {
+    #next-text {
+      font-size: 25px;
+    }
+  }
+
   @media (min-width: 430px) and (max-height: 932px) {
     #video-wrapper {
       margin-top: 311px;

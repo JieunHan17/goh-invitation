@@ -57,7 +57,7 @@
   }
 
   #adult-service-info-img {
-    width: 95%;
+    width: 85%;
     filter: drop-shadow(1px 1px 21px rgba(255, 255, 255, 0.75));
   }
 
@@ -74,7 +74,7 @@
   }
 
   #back-button-img {
-    width: calc(8svw);
+    height: calc(5svh);
     cursor: pointer;
     opacity: 70%;
   }

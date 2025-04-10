@@ -147,6 +147,12 @@
     }
   }
 
+  @media (min-width: 430px) {
+    #conclusion-text-wrapper {
+      font-size: 25px;
+    }
+  }
+
   @media (min-width: 430px) and (max-height: 932px) {
     #conclusion-text {
       margin-top: 311px;

@@ -66,6 +66,10 @@
   });
 </script>
 
+<svelte:head>
+  <link rel="preload" as="image" href="assets/video_button.png" />
+</svelte:head>
+
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
   id="wrapper"
