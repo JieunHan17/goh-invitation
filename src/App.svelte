@@ -1,29 +1,10 @@
 <script>
-  import Welcome from "./views/Welcome.svelte";
-  import Content from "./views/Content.svelte";
-  import Gift from "./views/Gift.svelte";
-  import Video from "./views/Video.svelte";
-  import {
-    conclusionPageVisible,
-    contentPageVisible,
-    giftPageVisible,
-    videoPageVisible,
-  } from "./stores/pageIndexStore";
-  import Conclusion from "./views/Conclusion.svelte";
+  import Router from "svelte-spa-router";
+  import routes from "../src/routes/index.js";
 </script>
 
 <main>
-  {#if $contentPageVisible}
-    <Content />
-  {:else if $giftPageVisible}
-    <Gift />
-  {:else if $videoPageVisible}
-    <Video />
-  {:else if $conclusionPageVisible}
-    <Conclusion />
-  {:else}
-    <Welcome />
-  {/if}
+  <Router {routes} />
 </main>
 
 <style>

@@ -1,17 +1,13 @@
 <script>
   import { fade } from "svelte/transition";
-  import {
-    videoPageVisible,
-    conclusionPageVisible,
-  } from "../stores/pageIndexStore";
   import DESC from "../../public/text/description";
+  import { replace } from "svelte-spa-router";
 
   const frame = "assets/frame.png";
 
   function handleClickNext() {
     console.log("handleClickNext");
-    videoPageVisible.update(false);
-    conclusionPageVisible.update(true);
+    replace("/conclusion");
   }
 </script>
 

@@ -1,19 +1,16 @@
 <script>
+  import { onMount } from "svelte";
   import { fade } from "svelte/transition";
-  import {
-    contentPageVisible,
-    giftPageVisible,
-  } from "../stores/pageIndexStore";
   import DESC from "../../public/text/description";
   import typewriter from "../utils/typewriter";
-
-  const DEFAULT_HEIGHT_DESKTOP = 932;
-  const DEFAULT_WIDTH_DESKTOP = 430;
+  import { replace, push } from "svelte-spa-router";
+  import { descIndex } from "../store/store";
 
   const note = "assets/note.png";
   const character = "assets/character.png";
   const insta =
     "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg";
+  const button = "assets/video_button.png";
   const logo = "assets/logo.png";
   const descriptions = [
     DESC.DESC2,
@@ -21,23 +18,23 @@
     DESC.DESC4,
     DESC.DESC5,
     DESC.DESC6,
+    DESC.DESC7,
   ];
 
   let completed = false;
   let isTypingOver = false;
   let isVisible = false;
-  $: descIndex = 0;
-  $: desc = descriptions[descIndex];
+  $: currentDescIndex = $descIndex;
+  $: desc = descriptions[currentDescIndex];
   $: keyArray = [completed, desc];
 
   const image = new Image();
   image.src = note;
 
   function handleIntroEnd() {
-    if (descIndex == 4) {
+    if (currentDescIndex == descriptions.length - 1) {
       setTimeout(() => {
-        contentPageVisible.update(false);
-        giftPageVisible.update(true);
+        replace("/gift");
       }, 500);
       return;
     }
@@ -46,12 +43,12 @@
 
   function handleClickNext() {
     console.log("handleClickNext");
-    if (descIndex < 4) {
-      descIndex += 1;
+    if (currentDescIndex < descriptions.length - 1) {
+      currentDescIndex += 1;
     }
     completed = false;
     isTypingOver = false;
-    isVisible = descIndex == 3 ? true : false;
+    isVisible = currentDescIndex == 4 ? true : false;
     console.log("isVisible: ", isVisible);
   }
 
@@ -63,6 +60,10 @@
     console.log("move");
     window.open(url, "_blank");
   }
+
+  onMount(() => {
+    console.log("descIndex: ", $descIndex);
+  });
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -85,19 +86,32 @@
       {/key}
       {#if isTypingOver}
         <div id="btn-text-wrapper">
-          <a
-            id="instagram"
-            on:click|preventDefault|stopPropagation={() => {
-              move("https://www.instagram.com/goh_youth/");
-            }}
-            href="https://www.instagram.com/goh_youth/"
-            target="_blank"
-            style="visibility: {isVisible ? 'visible' : 'hidden'}"
-            in:fade={{ duration: 1000 }}
-          >
-            <img id="instagram-img" src={insta} alt="instagram" />
-          </a>
-          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          {#if currentDescIndex == 3}
+            <div id="button" in:fade={{ duration: 1000 }}>
+              <img
+                id="button-img"
+                src={button}
+                alt="영상보기"
+                on:click|preventDefault|stopPropagation={() => {
+                  push("/include/actressvideo");
+                }}
+              />
+            </div>
+          {:else}
+            <a
+              id="instagram"
+              on:click|preventDefault|stopPropagation={() => {
+                move("https://www.instagram.com/goh_youth/");
+              }}
+              href="https://www.instagram.com/goh_youth/"
+              target="_blank"
+              style="visibility: {isVisible ? 'visible' : 'hidden'}"
+              in:fade={{ duration: 1000 }}
+            >
+              <img id="instagram-img" src={insta} alt="instagram" />
+            </a>
+          {/if}
+
           <div
             id="next-text"
             tabindex="0"
@@ -122,7 +136,6 @@
     target="_blank"
     rel="external"
   >
-    <!-- <span id="instagram-id">@goh_youth</span> -->
     <img id="logo-img" src={logo} alt="logo" />
   </a>
 </div>
@@ -174,10 +187,16 @@
     justify-content: space-between;
   }
 
+  #button,
   #instagram {
     flex: 2;
     width: 100%;
     text-align: start;
+  }
+
+  #button-img {
+    width: 35%;
+    cursor: pointer;
   }
 
   #instagram-img {

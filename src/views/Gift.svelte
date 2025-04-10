@@ -1,6 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
-  import { giftPageVisible, videoPageVisible } from "../stores/pageIndexStore";
+  import { replace } from "svelte-spa-router";
   const giftClosed = "assets/gift_closed.png";
   const giftOpen = "assets/gift_open.png";
 
@@ -13,8 +13,7 @@
     setTimeout(() => {
       whiteBackgroundVisible = true;
       setTimeout(() => {
-        giftPageVisible.update(false);
-        videoPageVisible.update(true);
+        replace("/video");
       }, 800);
     }, 1000);
   }

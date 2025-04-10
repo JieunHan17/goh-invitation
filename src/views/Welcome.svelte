@@ -1,12 +1,9 @@
 <script>
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
-  import { contentPageVisible } from "../stores/pageIndexStore";
   import DESC from "../../public/text/description";
   import typewriter from "../utils/typewriter";
-
-  const DEFAULT_HEIGHT_DESKTOP = 932;
-  const DEFAULT_WIDTH_DESKTOP = 430;
+  import { replace } from "svelte-spa-router";
 
   const title = "assets/title.png";
   const envelopClosed = "assets/envelop_closed.png";
@@ -25,7 +22,7 @@
     setTimeout(() => {
       whiteBackgroundVisible = true;
       setTimeout(() => {
-        contentPageVisible.update(true);
+        replace("/content");
       }, 800);
     }, 1000);
   }
@@ -62,8 +59,8 @@
       </div>
     {/if}
     {#if textVisible}
-      <div id="desc-wrapper" in:typewriter>
-        <span id="desc">{DESC.DESC1}</span>
+      <div id="desc-wrapper">
+        <span id="desc" in:typewriter>{DESC.DESC1}</span>
       </div>
     {/if}
   </div>
