@@ -88,7 +88,7 @@
   #back-button-img {
     position: absolute;
     bottom: 0;
-    height: calc(4svh);
+    width: 30px;
     cursor: pointer;
     opacity: 70%;
   }
@@ -109,10 +109,6 @@
   @media (min-width: 431px) and (max-height: 933px) {
     #video-wrapper {
       margin-top: 311px;
-    }
-
-    #back-button-img {
-      height: calc(4svw);
     }
   }
 </style>

@@ -160,7 +160,7 @@
 
     #adult-service-img,
     #youth-service-img {
-      height: calc(7svw);
+      width: 100%;
     }
   }
 </style>
