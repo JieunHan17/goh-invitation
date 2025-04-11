@@ -48,7 +48,6 @@
     }
     completed = false;
     isTypingOver = false;
-    isVisible = currentDescIndex == 4 ? true : false;
     console.log("isVisible: ", isVisible);
   }
 
@@ -63,6 +62,7 @@
 
   onMount(() => {
     console.log("descIndex: ", $descIndex);
+    isVisible = currentDescIndex == 4 ? true : false;
   });
 </script>
 
@@ -247,7 +247,7 @@
     width: 10%;
   }
 
-  @media (min-width: 430px) {
+  @media (min-width: 431px) {
     #note-text-wrapper {
       padding: 40px;
     }
@@ -261,7 +261,7 @@
     }
   }
 
-  @media (min-width: 430px) and (max-height: 932px) {
+  @media (min-width: 431px) and (max-height: 933px) {
     #note-img-wrapper {
       margin-top: 311px;
     }

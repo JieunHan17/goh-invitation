@@ -69,12 +69,16 @@
   }
 
   #back-button {
+    position: relative;
     text-align: start;
     padding-left: 10px;
+    margin-bottom: 10px;
   }
 
   #back-button-img {
-    height: calc(5svh);
+    position: absolute;
+    bottom: 0;
+    height: calc(4svh);
     cursor: pointer;
     opacity: 70%;
   }
@@ -85,7 +89,6 @@
     padding-right: 10px;
     margin-bottom: 10px;
     text-decoration-line: none;
-    z-index: 1;
     pointer-events: auto;
   }
 
@@ -93,9 +96,13 @@
     width: 10%;
   }
 
-  @media (min-width: 430px) and (max-height: 932px) {
+  @media (min-width: 431px) and (max-height: 933px) {
     #adult-service-info-wrapper {
       margin-top: 311px;
+    }
+
+    #back-button-img {
+      height: calc(4svw);
     }
   }
 </style>

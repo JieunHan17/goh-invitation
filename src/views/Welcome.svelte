@@ -151,7 +151,7 @@
     background-color: #ffffff80;
   }
 
-  @media (min-width: 430px) and (max-height: 932px) {
+  @media (min-width: 431px) and (max-height: 933px) {
     #title {
       margin-top: 311px;
     }

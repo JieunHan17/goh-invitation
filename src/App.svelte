@@ -17,16 +17,16 @@
   }
 
   /* 데스크탑에 최적화된 예외 CSS 코드*/
-  @media (min-width: 430px) and (max-height: 932px) {
+  @media (min-width: 431px) and (max-height: 933px) {
     main {
-      width: 430px;
-      height: 932px;
+      width: 431px;
+      height: 933px;
     }
   }
 
-  @media (min-width: 430px) and (min-height: 932px) {
+  @media (min-width: 431px) and (min-height: 933px) {
     main {
-      width: 430px;
+      width: 431px;
       height: 100%;
     }
   }

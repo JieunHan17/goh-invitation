@@ -147,15 +147,20 @@
     }
   }
 
-  @media (min-width: 430px) {
+  @media (min-width: 431px) {
     #conclusion-text-wrapper {
       font-size: 25px;
     }
   }
 
-  @media (min-width: 430px) and (max-height: 932px) {
-    #conclusion-text {
+  @media (min-width: 431px) and (max-height: 933px) {
+    #conclusion-wrapper {
       margin-top: 311px;
+    }
+
+    #adult-service-img,
+    #youth-service-img {
+      height: calc(7svw);
     }
   }
 </style>

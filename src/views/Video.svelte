@@ -72,13 +72,13 @@
     cursor: pointer;
   }
 
-  @media (min-width: 430px) {
+  @media (min-width: 431px) {
     #next-text {
       font-size: 25px;
     }
   }
 
-  @media (min-width: 430px) and (max-height: 932px) {
+  @media (min-width: 431px) and (max-height: 933px) {
     #video-wrapper {
       margin-top: 311px;
     }

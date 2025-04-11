@@ -7,20 +7,6 @@
   const backButton = "assets/back_button.png";
   const logo = "assets/logo.png";
 
-  let isMuted = true;
-  let isPlaying = true;
-  let isFullscreen = false;
-
-  function toggleMute() {
-    isMuted = !isMuted;
-    const video = document.getElementById("actress-video");
-    if (isMuted) {
-      video.muted = true;
-    } else {
-      video.muted = false;
-    }
-  }
-
   function move(url) {
     console.log("move");
     window.open(url, "_blank");
@@ -40,7 +26,7 @@
         src={backButton}
         alt="back"
         on:click|preventDefault|stopPropagation={() => {
-          descIndex.set(3);
+          descIndex.set(4);
           pop();
         }}
       />
@@ -91,12 +77,16 @@
   }
 
   #back-button {
+    position: relative;
     text-align: start;
     padding-left: 10px;
+    margin-bottom: 10px;
   }
 
   #back-button-img {
-    width: calc(8svw);
+    position: absolute;
+    bottom: 0;
+    height: calc(4svh);
     cursor: pointer;
     opacity: 70%;
   }
@@ -107,7 +97,6 @@
     padding-right: 10px;
     margin-bottom: 10px;
     text-decoration-line: none;
-    z-index: 1;
     pointer-events: auto;
   }
 
@@ -115,9 +104,13 @@
     width: 10%;
   }
 
-  @media (min-width: 430px) and (max-height: 932px) {
+  @media (min-width: 431px) and (max-height: 933px) {
     #video-wrapper {
       margin-top: 311px;
+    }
+
+    #back-button-img {
+      height: calc(4svw);
     }
   }
 </style>
