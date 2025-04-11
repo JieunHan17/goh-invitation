@@ -105,15 +105,19 @@
           {:else}
             <a
               id="instagram"
-              on:click|preventDefault|stopPropagation={() => {
-                move("https://www.instagram.com/goh_youth/");
-              }}
-              href="https://www.instagram.com/goh_youth/"
-              target="_blank"
               style="visibility: {isVisible ? 'visible' : 'hidden'}"
               in:fade={{ duration: 1000 }}
             >
-              <img id="instagram-img" src={insta} alt="instagram" />
+              <img
+                id="instagram-img"
+                src={insta}
+                alt="instagram"
+                on:click|preventDefault|stopPropagation={() => {
+                  move("https://www.instagram.com/goh_youth/");
+                }}
+                href="https://www.instagram.com/goh_youth/"
+                target="_blank"
+              />
             </a>
           {/if}
 
