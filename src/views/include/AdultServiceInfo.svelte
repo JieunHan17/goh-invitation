@@ -28,16 +28,18 @@
         }}
       />
     </div>
-    <a
-      id="logo"
-      on:click|preventDefault|stopPropagation={() => {
-        move("http://www.joodasan.org");
-      }}
-      href="http://www.joodasan.org"
-      target="_blank"
-      rel="external"
-    >
-      <img id="logo-img" src={logo} alt="logo" />
+    <a id="logo">
+      <img
+        id="logo-img"
+        src={logo}
+        alt="logo"
+        on:click|preventDefault|stopPropagation={() => {
+          move("http://www.joodasan.org");
+        }}
+        href="http://www.joodasan.org"
+        target="_blank"
+        rel="external"
+      />
     </a>
   </div>
 </div>
