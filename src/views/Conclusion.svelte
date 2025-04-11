@@ -160,7 +160,7 @@
 
     #adult-service-img,
     #youth-service-img {
-      width: 100%;
+      height: 65px;
     }
   }
 </style>
